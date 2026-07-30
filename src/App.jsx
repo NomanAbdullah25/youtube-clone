@@ -7,13 +7,13 @@ import ProfileModal from './components/ProfileModal';
 import { Trash2, HeartOff } from 'lucide-react';
 
 const videoDatabase = [
-  // ================= HOME SECTION =================
+  // ================= HOME SECTION (16 Videos) =================
   {
     id: 'hm-1',
-    youtubeId: 'dQw4w9WgXcQ',
+    youtubeId: 'dQw4w9WgXcQ', // Rickroll Classic
     title: 'Full Stack Development Roadmap 2026',
     channel: 'Tech Lead',
-    views: '120K views',
+    views: '1.2M views',
     timestamp: '2 days ago',
     duration: '14:20',
     category: 'Coding',
@@ -23,10 +23,10 @@ const videoDatabase = [
   },
   {
     id: 'hm-2',
-    youtubeId: 'L_LUpnjgPso',
-    title: 'Building a Microservices Architecture with Node.js',
+    youtubeId: '8ZcmTl_1ER8', // Sax Guy
+    title: 'Building Microservices with Node.js & Docker',
     channel: 'Code Mastery',
-    views: '45K views',
+    views: '845K views',
     timestamp: '1 week ago',
     duration: '22:15',
     category: 'Coding',
@@ -37,7 +37,7 @@ const videoDatabase = [
   {
     id: 'hm-3',
     youtubeId: 'fN25f8iU8S4',
-    title: 'Tailwind CSS Complete Masterclass (v4 & Beyond)',
+    title: 'Tailwind CSS v4 & Modern UI Layouts Masterclass',
     channel: 'Design Pro',
     views: '300K views',
     timestamp: '1 month ago',
@@ -49,10 +49,10 @@ const videoDatabase = [
   },
   {
     id: 'hm-4',
-    youtubeId: 'jfKfPfyJRdk',
-    title: 'Lo-Fi Chill Beats for Coding & Studying',
+    youtubeId: 'jfKfPfyJRdk', // Lofi Girl
+    title: 'Lo-Fi Chill Beats for Deep Focused Coding',
     channel: 'Lofi Girl',
-    views: '1.2M views',
+    views: '12.4M views',
     timestamp: '3 weeks ago',
     duration: '24:00',
     category: 'Music',
@@ -62,8 +62,8 @@ const videoDatabase = [
   },
   {
     id: 'hm-5',
-    youtubeId: 'w7ejDZ8SWv8',
-    title: 'React 19 Hooks & State Management Deep Dive',
+    youtubeId: 'QH2-TGUlwu4', // Nyan Cat
+    title: 'React 19 Hooks, Compiler & Async Actions Deep Dive',
     channel: 'React Core Team',
     views: '510K views',
     timestamp: '5 days ago',
@@ -75,8 +75,8 @@ const videoDatabase = [
   },
   {
     id: 'hm-6',
-    youtubeId: '2g811Ko7K8U',
-    title: 'UI/UX Micro-Interactions in Figma & Framer',
+    youtubeId: 'J---aiyznGQ', // Keyboard Cat
+    title: 'UI/UX Micro-Interactions in Figma & Framer Motion',
     channel: 'UX Motion Studio',
     views: '230K views',
     timestamp: '4 days ago',
@@ -86,15 +86,145 @@ const videoDatabase = [
     thumbnail: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80',
     avatar: 'U'
   },
+  {
+    id: 'hm-7',
+    youtubeId: 'feA64wXhb2Y', // Shooting Stars
+    title: 'TypeScript 5.5 High-Performance Optimization Patterns',
+    channel: 'ByteByteGo',
+    views: '175K views',
+    timestamp: '6 days ago',
+    duration: '19:10',
+    category: 'Coding',
+    section: 'home',
+    thumbnail: 'https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?w=800&q=80',
+    avatar: 'B'
+  },
+  {
+    id: 'hm-8',
+    youtubeId: '4xDzrJKXOOY', // Synthwave synth
+    title: 'Synthwave Coding Session – Cyberpunk Night City',
+    channel: 'Cyber Sounds',
+    views: '890K views',
+    timestamp: '2 weeks ago',
+    duration: '1:15:00',
+    category: 'Music',
+    section: 'home',
+    thumbnail: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=800&q=80',
+    avatar: 'C'
+  },
+  {
+    id: 'hm-9',
+    youtubeId: 'oavMtUWDBTM', // Trololo Song
+    title: 'Building Realtime Apps with Next.js 15 & WebSockets',
+    channel: 'Dev Overdrive',
+    views: '340K views',
+    timestamp: '1 week ago',
+    duration: '31:25',
+    category: 'React',
+    section: 'home',
+    thumbnail: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80',
+    avatar: 'D'
+  },
+  {
+    id: 'hm-10',
+    youtubeId: '9bZkp7q19f0', // Gangnam Style
+    title: 'Enterprise Design Systems for Scalable Web Apps',
+    channel: 'Figma Lab',
+    views: '980K views',
+    timestamp: '3 days ago',
+    duration: '21:05',
+    category: 'Design',
+    section: 'home',
+    thumbnail: 'https://images.unsplash.com/photo-1542744094-3a3121699563?w=800&q=80',
+    avatar: 'F'
+  },
+  {
+    id: 'hm-11',
+    youtubeId: '09m0B8RRiEE', // Crab Rave
+    title: 'Rust for JavaScript Developers – Fast Track Intro',
+    channel: 'Fireship',
+    views: '1.8M views',
+    timestamp: '4 weeks ago',
+    duration: '11:45',
+    category: 'Coding',
+    section: 'home',
+    thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+    avatar: 'F'
+  },
+  {
+    id: 'hm-12',
+    youtubeId: 'TNhaISOUy6Q',
+    title: 'Acoustic Guitar Melodies for Deep Concentration',
+    channel: 'Acoustic Vibes',
+    views: '420K views',
+    timestamp: '5 days ago',
+    duration: '48:10',
+    category: 'Music',
+    section: 'home',
+    thumbnail: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80',
+    avatar: 'A'
+  },
+  {
+    id: 'hm-13',
+    youtubeId: 'ZZ5LpwO-An4', // HE-MAN HEYYEYAAEYAAA
+    title: 'Zustand vs Redux Toolkit in Enterprise React',
+    channel: 'React Core Team',
+    views: '610K views',
+    timestamp: '3 days ago',
+    duration: '17:30',
+    category: 'React',
+    section: 'home',
+    thumbnail: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80',
+    avatar: 'R'
+  },
+  {
+    id: 'hm-14',
+    youtubeId: 'L_LUpnjgPso',
+    title: 'PostgreSQL Indexing & Query Tuning Techniques',
+    channel: 'Database Hub',
+    views: '140K views',
+    timestamp: '1 week ago',
+    duration: '26:40',
+    category: 'Coding',
+    section: 'home',
+    thumbnail: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&q=80',
+    avatar: 'D'
+  },
+  {
+    id: 'hm-15',
+    youtubeId: '2g811Ko7K8U',
+    title: 'Dark Mode UI/UX Color Contrast Best Practices',
+    channel: 'UX Motion Studio',
+    views: '320K views',
+    timestamp: '2 weeks ago',
+    duration: '14:15',
+    category: 'Design',
+    section: 'home',
+    thumbnail: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&q=80',
+    avatar: 'U'
+  },
+  {
+    id: 'hm-16',
+    youtubeId: '4xDzrJKXOOY',
+    title: 'Ambient Electronic Soundscapes for Late Night Coding',
+    channel: 'Electronic Hub',
+    views: '950K views',
+    timestamp: '1 month ago',
+    duration: '1:02:00',
+    category: 'Music',
+    section: 'home',
+    thumbnail: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&q=80',
+    avatar: 'E'
+  },
 
-  // ================= TRENDING SECTION =================
+  // ================= TRENDING SECTION (8 Ranked Superpower Videos) =================
   {
     id: 'tr-1',
-    youtubeId: 'M576WGiDBdQ',
+    youtubeId: 'dQw4w9WgXcQ',
     rank: 1,
     title: 'UNLIMITED POWER: Quantum Computing Breakthrough 2026',
     channel: 'Aura Tech',
-    views: '4.8M views',
+    views: '8.8M views',
     timestamp: '12 hours ago',
     duration: '16:45',
     category: 'Coding',
@@ -105,11 +235,11 @@ const videoDatabase = [
   },
   {
     id: 'tr-2',
-    youtubeId: 'w7ejDZ8SWv8',
+    youtubeId: 'feA64wXhb2Y',
     rank: 2,
     title: 'Super Saiyan UI/UX Animation Techniques Revealed',
     channel: 'Anime VFX Lab',
-    views: '3.1M views',
+    views: '5.1M views',
     timestamp: '1 day ago',
     duration: '11:05',
     category: 'Design',
@@ -118,8 +248,98 @@ const videoDatabase = [
     thumbnail: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800&q=80',
     avatar: 'V'
   },
+  {
+    id: 'tr-3',
+    youtubeId: '09m0B8RRiEE',
+    rank: 3,
+    title: 'Domain Expansion: Full Stack Web Security Mastery',
+    channel: 'Cyber Ninja',
+    views: '3.4M views',
+    timestamp: '2 days ago',
+    duration: '28:30',
+    category: 'Coding',
+    section: 'trending',
+    auraEffect: 'from-emerald-500/30 via-teal-600/20 to-purple-600/30 animate-pulse',
+    thumbnail: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80',
+    avatar: 'N'
+  },
+  {
+    id: 'tr-4',
+    youtubeId: '8ZcmTl_1ER8',
+    rank: 4,
+    title: 'Bankai Engine: 60FPS WebGL Shaders & Canvas FX',
+    channel: 'Graphics Overlord',
+    views: '2.9M views',
+    timestamp: '3 days ago',
+    duration: '20:15',
+    category: 'Design',
+    section: 'trending',
+    auraEffect: 'from-fuchsia-600/30 via-pink-500/20 to-rose-600/30 animate-pulse',
+    thumbnail: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80',
+    avatar: 'G'
+  },
+  {
+    id: 'tr-5',
+    youtubeId: 'QH2-TGUlwu4',
+    rank: 5,
+    title: 'Ultra Instinct AI Agent Orchestration Framework',
+    channel: 'AI Autonomous',
+    views: '2.1M views',
+    timestamp: '4 days ago',
+    duration: '35:40',
+    category: 'Coding',
+    section: 'trending',
+    auraEffect: 'from-blue-600/30 via-sky-400/20 to-teal-500/30 animate-pulse',
+    thumbnail: 'https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&q=80',
+    avatar: 'I'
+  },
+  {
+    id: 'tr-6',
+    youtubeId: 'oavMtUWDBTM',
+    rank: 6,
+    title: 'Chakra Control: High-Frequency React State Management',
+    channel: 'Ninja Coders',
+    views: '1.8M views',
+    timestamp: '5 days ago',
+    duration: '15:20',
+    category: 'React',
+    section: 'trending',
+    auraEffect: 'from-orange-500/30 via-amber-400/20 to-red-600/30 animate-pulse',
+    thumbnail: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80',
+    avatar: 'N'
+  },
+  {
+    id: 'tr-7',
+    youtubeId: 'ZZ5LpwO-An4',
+    rank: 7,
+    title: 'Kamehameha Build Pipelines: Vite 6 Instant HMR',
+    channel: 'Build Master',
+    views: '1.2M views',
+    timestamp: '6 days ago',
+    duration: '12:00',
+    category: 'Coding',
+    section: 'trending',
+    auraEffect: 'from-yellow-500/30 via-amber-500/20 to-orange-600/30 animate-pulse',
+    thumbnail: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80',
+    avatar: 'B'
+  },
+  {
+    id: 'tr-8',
+    youtubeId: '9bZkp7q19f0',
+    rank: 8,
+    title: 'Infinite Tsukuyomi VR Web Design Experience',
+    channel: 'VR Studio',
+    views: '990K views',
+    timestamp: '1 week ago',
+    duration: '25:10',
+    category: 'Design',
+    section: 'trending',
+    auraEffect: 'from-purple-600/30 via-violet-500/20 to-indigo-600/30 animate-pulse',
+    thumbnail: 'https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?w=800&q=80',
+    avatar: 'V'
+  },
 
-  // ================= EXPLORE SECTION =================
+  // ================= EXPLORE SECTION (12 Videos) =================
   {
     id: 'ex-1',
     youtubeId: '2g811Ko7K8U',
@@ -145,6 +365,136 @@ const videoDatabase = [
     section: 'explore',
     thumbnail: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=800&q=80',
     avatar: 'N'
+  },
+  {
+    id: 'ex-3',
+    youtubeId: 'Ke90Tje7VS0',
+    title: 'React 19 & Next.js Server Components Guide',
+    channel: 'Dev Overdrive',
+    views: '410K views',
+    timestamp: '1 week ago',
+    duration: '19:15',
+    category: 'React',
+    section: 'explore',
+    thumbnail: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80',
+    avatar: 'D'
+  },
+  {
+    id: 'ex-4',
+    youtubeId: 'fN25f8iU8S4',
+    title: 'Futuristic Architectural Design in 3D Blender',
+    channel: 'Render Studio',
+    views: '310K views',
+    timestamp: '3 days ago',
+    duration: '27:40',
+    category: 'Design',
+    section: 'explore',
+    thumbnail: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
+    avatar: 'R'
+  },
+  {
+    id: 'ex-5',
+    youtubeId: 'jfKfPfyJRdk',
+    title: 'Deep House Beats for Late Night Coding Sessions',
+    channel: 'Electronic Hub',
+    views: '740K views',
+    timestamp: '2 weeks ago',
+    duration: '1:05:30',
+    category: 'Music',
+    section: 'explore',
+    thumbnail: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&q=80',
+    avatar: 'E'
+  },
+  {
+    id: 'ex-6',
+    youtubeId: 'dQw4w9WgXcQ',
+    title: 'Mastering Docker & Kubernetes for Cloud Deployments',
+    channel: 'Cloud Native Lab',
+    views: '520K views',
+    timestamp: '1 week ago',
+    duration: '42:15',
+    category: 'Coding',
+    section: 'explore',
+    thumbnail: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&q=80',
+    avatar: 'C'
+  },
+  {
+    id: 'ex-7',
+    youtubeId: 'L_LUpnjgPso',
+    title: 'Building Interactive 3D Web Experiences with Three.js',
+    channel: 'Creative Tech',
+    views: '280K views',
+    timestamp: '4 days ago',
+    duration: '23:50',
+    category: 'React',
+    section: 'explore',
+    thumbnail: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80',
+    avatar: 'C'
+  },
+  {
+    id: 'ex-8',
+    youtubeId: 'SqcY0GlETPk',
+    title: 'Minimalist Interior Design Aesthetics & Principles',
+    channel: 'Space Design',
+    views: '190K views',
+    timestamp: '6 days ago',
+    duration: '15:10',
+    category: 'Design',
+    section: 'explore',
+    thumbnail: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80',
+    avatar: 'S'
+  },
+  {
+    id: 'ex-9',
+    youtubeId: '8ZcmTl_1ER8',
+    title: 'Quantum Machine Learning Algorithms Explained',
+    channel: 'AI Autonomous',
+    views: '430K views',
+    timestamp: '5 days ago',
+    duration: '31:20',
+    category: 'Coding',
+    section: 'explore',
+    thumbnail: 'https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&q=80',
+    avatar: 'I'
+  },
+  {
+    id: 'ex-10',
+    youtubeId: 'J---aiyznGQ',
+    title: 'Typography & Layout Principles for Web Interfaces',
+    channel: 'Design Pro',
+    views: '260K views',
+    timestamp: '2 weeks ago',
+    duration: '18:05',
+    category: 'Design',
+    section: 'explore',
+    thumbnail: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&q=80',
+    avatar: 'D'
+  },
+  {
+    id: 'ex-11',
+    youtubeId: 'feA64wXhb2Y',
+    title: 'Building Realtime Audio Visualization in Canvas',
+    channel: 'Graphics Overlord',
+    views: '380K views',
+    timestamp: '1 week ago',
+    duration: '24:15',
+    category: 'React',
+    section: 'explore',
+    thumbnail: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80',
+    avatar: 'G'
+  },
+  {
+    id: 'ex-12',
+    youtubeId: '09m0B8RRiEE',
+    title: 'Smooth Jazz & Lo-Fi Chill Hop Compilation',
+    channel: 'Acoustic Vibes',
+    views: '670K views',
+    timestamp: '3 weeks ago',
+    duration: '1:10:00',
+    category: 'Music',
+    section: 'explore',
+    thumbnail: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80',
+    avatar: 'A'
   }
 ];
 
@@ -174,6 +524,12 @@ export default function App() {
     return saved ? JSON.parse(saved) : [];
   });
 
+  // 4. Subscriptions Channels State (Persisted)
+  const [subscribedChannels, setSubscribedChannels] = useState(() => {
+    const saved = localStorage.getItem('yt_subscriptions');
+    return saved ? JSON.parse(saved) : ['Tech Lead', 'Code Mastery'];
+  });
+
   const toggleDarkMode = () => {
     setIsDarkMode((prev) => {
       const nextState = !prev;
@@ -182,11 +538,10 @@ export default function App() {
     });
   };
 
-  // Open player and record into Watch History
+  // Open player and automatically record into Watch History
   const handleSelectVideo = (video) => {
     setActiveVideo(video);
     setWatchHistory((prevHistory) => {
-      // Remove duplicate if already present, then place at beginning
       const filtered = prevHistory.filter((v) => v.id !== video.id);
       const updated = [video, ...filtered];
       localStorage.setItem('yt_watch_history', JSON.stringify(updated));
@@ -209,6 +564,20 @@ export default function App() {
     });
   };
 
+  // Toggle Channel Subscription
+  const handleToggleSubscribe = (channelName) => {
+    setSubscribedChannels((prev) => {
+      let updated;
+      if (prev.includes(channelName)) {
+        updated = prev.filter((c) => c !== channelName);
+      } else {
+        updated = [...prev, channelName];
+      }
+      localStorage.setItem('yt_subscriptions', JSON.stringify(updated));
+      return updated;
+    });
+  };
+
   // Clear Watch History
   const handleClearHistory = () => {
     setWatchHistory([]);
@@ -221,12 +590,14 @@ export default function App() {
     localStorage.removeItem('yt_liked_videos');
   };
 
-  // Determine feed to display
+  // Filter video feed
   let displayedVideos = [];
   if (activeSection === 'history') {
     displayedVideos = watchHistory;
   } else if (activeSection === 'liked') {
     displayedVideos = likedVideos;
+  } else if (activeSection === 'subscriptions') {
+    displayedVideos = videoDatabase.filter((v) => subscribedChannels.includes(v.channel));
   } else {
     displayedVideos = videoDatabase.filter((video) => {
       const matchesSearch = video.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -339,6 +710,7 @@ export default function App() {
               <p className="text-xs text-gray-500 mt-1">
                 {activeSection === 'history' && 'Videos you watch will automatically show up here.'}
                 {activeSection === 'liked' && 'Videos you like will show up here.'}
+                {activeSection === 'subscriptions' && 'Subscribe to channels during playback to see them here!'}
               </p>
             </div>
           )}
@@ -351,6 +723,8 @@ export default function App() {
         isDarkMode={isDarkMode} 
         likedVideos={likedVideos}
         onToggleLike={handleToggleLike}
+        subscribedChannels={subscribedChannels}
+        onToggleSubscribe={handleToggleSubscribe}
       />
 
       <ProfileModal
