@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Home, Compass, Flame, Tv, History, ThumbsUp, Settings, Flag, HelpCircle, Moon, Check, X } from 'lucide-react';
+import { Home, Compass, Flame, Tv, History, ThumbsUp, Settings, Flag, HelpCircle, Moon, X } from 'lucide-react';
 
 export default function Sidebar({ 
   selectedCategory, 
@@ -45,7 +45,6 @@ export default function Sidebar({
             <span>Explore</span>
           </button>
 
-          {/* Trending Section */}
           <button 
             onClick={() => setActiveSection('trending')} 
             className={`flex items-center gap-4 w-full px-3 py-2.5 rounded-xl text-sm font-medium transition-colors ${
@@ -54,7 +53,7 @@ export default function Sidebar({
                 : isDarkMode ? 'hover:bg-[#272727] text-gray-300' : 'hover:bg-gray-100 text-gray-700'
             }`}
           >
-            <Flame className="w-5 h-5 text-orange-500 animate-pulse" />
+            <Flame className="w-5 h-5 text-orange-500" />
             <span>Trending</span>
           </button>
 
@@ -147,7 +146,7 @@ export default function Sidebar({
       {/* --- SETTINGS / HELP / REPORT MODALS --- */}
       {activeModal && (
         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className={`w-full max-w-md rounded-2xl border p-6 shadow-2xl relative ${
+          <div className={`w-full max-w-lg rounded-2xl border p-6 shadow-2xl relative ${
             isDarkMode ? 'bg-[#181818] border-gray-800 text-white' : 'bg-white border-gray-200 text-gray-900'
           }`}>
             <button 
@@ -173,7 +172,7 @@ export default function Sidebar({
                       <Moon className="w-5 h-5 text-indigo-500" />
                       <div>
                         <p className="text-sm font-medium">Dark Mode Appearance</p>
-                        <p className="text-xs text-gray-500">Toggle light/dark cinema theme interface</p>
+                        <p className="text-xs text-gray-500">Toggle light/dark theme interface</p>
                       </div>
                     </div>
                     
@@ -188,17 +187,38 @@ export default function Sidebar({
               </div>
             )}
 
-            {/* Help View */}
+            {/* Professional, Industry-Oriented Help Center */}
             {activeModal === 'help' && (
-              <div>
-                <h2 className="text-xl font-bold mb-3 flex items-center gap-2">
-                  <HelpCircle className="w-5 h-5 text-blue-500" />
-                  Help Center
-                </h2>
-                <p className="text-xs text-gray-400 mb-4">Frequently Asked Questions & Support</p>
-                <div className="space-y-2 text-xs text-gray-400">
-                  <p>• Click any menu item in the left sidebar to change views.</p>
-                  <p>• Switch between Light Mode and Dark Mode in Settings.</p>
+              <div className="space-y-4">
+                <div className="flex items-center gap-2 border-b pb-3 border-gray-800">
+                  <HelpCircle className="w-6 h-6 text-blue-500" />
+                  <div>
+                    <h2 className="text-lg font-bold">YouTube Clone Help & Operations Center</h2>
+                    <p className="text-xs text-gray-400">Technical Documentation & End-User Guidance</p>
+                  </div>
+                </div>
+
+                <div className="space-y-3 text-xs leading-relaxed max-h-80 overflow-y-auto pr-1">
+                  <div className={`p-3 rounded-xl border ${isDarkMode ? 'bg-black/30 border-gray-800' : 'bg-gray-50 border-gray-200'}`}>
+                    <h3 className="font-semibold text-sm mb-1 text-red-500">1. Navigation & Feed Discovery</h3>
+                    <p className="text-gray-400">
+                      Utilize the left primary navigation drawer to switch between distinct video feeds including Home, Explore, Subscriptions, Watch History, and Liked content. Categorical filter chips allow granular content narrowing.
+                    </p>
+                  </div>
+
+                  <div className={`p-3 rounded-xl border ${isDarkMode ? 'bg-black/30 border-gray-800' : 'bg-gray-50 border-gray-200'}`}>
+                    <h3 className="font-semibold text-sm mb-1 text-blue-500">2. Embedded Video Playback</h3>
+                    <p className="text-gray-400">
+                      Selecting any thumbnail initializes a modal viewport with dynamic YouTube iframe embedding, responsive aspect-ratio handling, and real-time metadata rendering.
+                    </p>
+                  </div>
+
+                  <div className={`p-3 rounded-xl border ${isDarkMode ? 'bg-black/30 border-gray-800' : 'bg-gray-50 border-gray-200'}`}>
+                    <h3 className="font-semibold text-sm mb-1 text-indigo-500">3. State Persistence & Preferences</h3>
+                    <p className="text-gray-400">
+                      User profile information, custom avatar metadata, and dark/light mode appearance states are stored in browser LocalStorage to maintain consistency across browser restarts.
+                    </p>
+                  </div>
                 </div>
               </div>
             )}

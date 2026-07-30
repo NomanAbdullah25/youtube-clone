@@ -6,9 +6,10 @@ import VideoModal from './components/VideoModal';
 import ProfileModal from './components/ProfileModal';
 
 const videoDatabase = [
-  // Coding / Tech
+  // --- HOME SECTION ---
   {
-    id: '1',
+    id: 'hm-1',
+    youtubeId: 'dQw4w9WgXcQ',
     title: 'Full Stack Development Roadmap 2026',
     channel: 'Tech Lead',
     views: '120K views',
@@ -20,7 +21,8 @@ const videoDatabase = [
     avatar: 'T'
   },
   {
-    id: '2',
+    id: 'hm-2',
+    youtubeId: 'L_LUpnjgPso',
     title: 'Building a Microservices Architecture with Node.js',
     channel: 'Code Mastery',
     views: '45K views',
@@ -31,9 +33,9 @@ const videoDatabase = [
     thumbnail: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80',
     avatar: 'C'
   },
-  // React / Design
   {
-    id: '3',
+    id: 'hm-3',
+    youtubeId: 'fN25f8iU8S4',
     title: 'Tailwind CSS Complete Masterclass (v4 & Beyond)',
     channel: 'Design Pro',
     views: '300K views',
@@ -45,20 +47,8 @@ const videoDatabase = [
     avatar: 'D'
   },
   {
-    id: '4',
-    title: 'MongoDB Aggregation Framework Tutorial',
-    channel: 'Database Hub',
-    views: '18K views',
-    timestamp: '3 days ago',
-    duration: '18:40',
-    category: 'React',
-    section: 'home',
-    thumbnail: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&q=80',
-    avatar: 'D'
-  },
-  // Music
-  {
-    id: '5',
+    id: 'hm-4',
+    youtubeId: 'jfKfPfyJRdk',
     title: 'Lo-Fi Chill Beats for Coding & Studying',
     channel: 'Lofi Girl',
     views: '1.2M views',
@@ -70,9 +60,10 @@ const videoDatabase = [
     avatar: 'L'
   },
 
-  // --- TRENDING VIDEOS (With Rank & Cool Superpower Effects) ---
+  // --- TRENDING SECTION (With Rank Badges & Aura) ---
   {
     id: 'tr-1',
+    youtubeId: 'M576WGiDBdQ',
     rank: 1,
     title: 'UNLIMITED POWER: Quantum Computing Breakthrough 2026',
     channel: 'Aura Tech',
@@ -87,6 +78,7 @@ const videoDatabase = [
   },
   {
     id: 'tr-2',
+    youtubeId: 'w7ejDZ8SWv8',
     rank: 2,
     title: 'Super Saiyan UI/UX Animation Techniques Revealed',
     channel: 'Anime VFX Lab',
@@ -101,6 +93,7 @@ const videoDatabase = [
   },
   {
     id: 'tr-3',
+    youtubeId: 'bMknfKXIFA8',
     rank: 3,
     title: 'Domain Expansion: Full Stack Web Security Mastery',
     channel: 'Cyber Ninja',
@@ -114,9 +107,10 @@ const videoDatabase = [
     avatar: 'N'
   },
 
-  // --- EXPLORE VIDEOS ---
+  // --- EXPLORE SECTION ---
   {
     id: 'ex-1',
+    youtubeId: '2g811Ko7K8U',
     title: 'Exploring Deep Space & Futuristic AI Habitats',
     channel: 'Cosmic Frontier',
     views: '890K views',
@@ -129,6 +123,7 @@ const videoDatabase = [
   },
   {
     id: 'ex-2',
+    youtubeId: '4xDzrJKXOOY',
     title: 'Cyberpunk Soundscapes & Synthesizer Music Live',
     channel: 'Neon Beats',
     views: '620K views',
@@ -141,15 +136,100 @@ const videoDatabase = [
   },
   {
     id: 'ex-3',
-    title: 'Advanced AI Video Rendering Pipeline in React',
+    youtubeId: 'Ke90Tje7VS0',
+    title: 'React 19 & Next.js Server Components Guide',
     channel: 'Dev Overdrive',
     views: '410K views',
     timestamp: '1 week ago',
     duration: '19:15',
     category: 'React',
     section: 'explore',
-    thumbnail: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80',
+    thumbnail: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80',
     avatar: 'D'
+  },
+
+  // --- SUBSCRIPTIONS SECTION ---
+  {
+    id: 'sub-1',
+    youtubeId: 'SqcY0GlETPk',
+    title: 'System Design Interview – Building Distributed Systems',
+    channel: 'ByteByteGo',
+    views: '950K views',
+    timestamp: '3 days ago',
+    duration: '21:00',
+    category: 'Coding',
+    section: 'subscriptions',
+    thumbnail: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80',
+    avatar: 'B'
+  },
+  {
+    id: 'sub-2',
+    youtubeId: '8aGhZQkoFbQ',
+    title: 'Figma to Code Workflow in 2026',
+    channel: 'Design Pro',
+    views: '180K views',
+    timestamp: '4 days ago',
+    duration: '16:40',
+    category: 'Design',
+    section: 'subscriptions',
+    thumbnail: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80',
+    avatar: 'D'
+  },
+
+  // --- HISTORY SECTION ---
+  {
+    id: 'his-1',
+    youtubeId: 'N3AkSS5hXMA',
+    title: 'Modern CSS Layouts & Grid Systems Explained',
+    channel: 'Web Dev Simplified',
+    views: '540K views',
+    timestamp: 'Watched yesterday',
+    duration: '13:45',
+    category: 'Design',
+    section: 'history',
+    thumbnail: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&q=80',
+    avatar: 'W'
+  },
+  {
+    id: 'his-2',
+    youtubeId: '30LWjhZzg50',
+    title: 'Python for Data Science Masterclass',
+    channel: 'Data Camp',
+    views: '800K views',
+    timestamp: 'Watched 2 days ago',
+    duration: '38:20',
+    category: 'Coding',
+    section: 'history',
+    thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+    avatar: 'D'
+  },
+
+  // --- LIKED VIDEOS SECTION ---
+  {
+    id: 'lk-1',
+    youtubeId: 'kUMe1FH4CHE',
+    title: 'Clean Code Architecture in JavaScript Applications',
+    channel: 'Fireship',
+    views: '1.5M views',
+    timestamp: 'Liked 1 week ago',
+    duration: '10:15',
+    category: 'Coding',
+    section: 'liked',
+    thumbnail: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&q=80',
+    avatar: 'F'
+  },
+  {
+    id: 'lk-2',
+    youtubeId: 'TNhaISOUy6Q',
+    title: 'Ambient Music for Deep Focus & Coding',
+    channel: 'Chillhop Music',
+    views: '2.1M views',
+    timestamp: 'Liked 2 weeks ago',
+    duration: '42:00',
+    category: 'Music',
+    section: 'liked',
+    thumbnail: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80',
+    avatar: 'C'
   }
 ];
 
@@ -158,7 +238,7 @@ export default function App() {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [activeSection, setActiveSection] = useState('home'); // 'home', 'explore', 'trending', 'subscriptions', 'history', 'liked'
+  const [activeSection, setActiveSection] = useState('home'); 
   const [searchQuery, setSearchQuery] = useState('');
 
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -174,33 +254,27 @@ export default function App() {
     });
   };
 
-  // Filter video list depending on section, category, and search query
+  // Filter video list specifically per section
   const displayedVideos = videoDatabase.filter((video) => {
     const matchesSearch = video.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                           video.channel.toLowerCase().includes(searchQuery.toLowerCase());
     
     if (!matchesSearch) return false;
 
-    if (activeSection === 'trending') {
-      return video.section === 'trending';
-    }
-    if (activeSection === 'explore') {
-      return video.section === 'explore' || video.section === 'home';
-    }
-    if (activeSection === 'subscriptions' || activeSection === 'history' || activeSection === 'liked') {
-      return true; // Displays saved feed
+    // Strict tab filtering so each section gets distinct videos
+    if (video.section !== activeSection) return false;
+
+    if (activeSection === 'home' || activeSection === 'explore') {
+      return selectedCategory === 'All' || video.category === selectedCategory;
     }
 
-    // Default Home Feed
-    const matchesCategory = selectedCategory === 'All' || video.category === selectedCategory;
-    return matchesCategory && (video.section === 'home' || video.section === 'explore');
+    return true;
   });
 
   return (
     <div className={`min-h-screen transition-colors duration-200 ${
       isDarkMode ? 'bg-[#0f0f0f] text-white' : 'bg-gray-100 text-gray-900'
     }`}>
-      {/* Dynamic Navbar with toggleable hamburger sidebar */}
       <Navbar 
         onOpenProfile={() => setIsProfileOpen(true)} 
         searchQuery={searchQuery}
@@ -210,7 +284,6 @@ export default function App() {
       />
 
       <div className="flex pt-14">
-        {/* Responsive Sidebar */}
         <Sidebar 
           selectedCategory={selectedCategory} 
           setSelectedCategory={setSelectedCategory}
@@ -221,20 +294,19 @@ export default function App() {
           isOpen={isSidebarOpen}
         />
 
-        {/* Main Content Area */}
         <main className={`flex-1 p-4 md:p-6 transition-all duration-200 overflow-y-auto ${
           isSidebarOpen ? 'md:ml-64 ml-0' : 'ml-0'
         }`}>
           
-          {/* Section Header */}
+          {/* Main Panel Header (NO EMOJIS EXCEPT FIRE ON TRENDING) */}
           <div className="flex items-center justify-between mb-6">
             <h1 className="text-xl md:text-2xl font-bold capitalize flex items-center gap-2">
-              {activeSection === 'trending' && '🔥 Trending Videos'}
-              {activeSection === 'explore' && '🧭 Explore New Content'}
-              {activeSection === 'subscriptions' && '📺 Subscriptions'}
-              {activeSection === 'history' && '📜 Watch History'}
-              {activeSection === 'liked' && '👍 Liked Videos'}
-              {activeSection === 'home' && '🏠 Home'}
+              {activeSection === 'trending' && '🔥 Trending'}
+              {activeSection === 'explore' && 'Explore'}
+              {activeSection === 'subscriptions' && 'Subscriptions'}
+              {activeSection === 'history' && 'History'}
+              {activeSection === 'liked' && 'Liked Videos'}
+              {activeSection === 'home' && 'Home'}
             </h1>
           </div>
 
@@ -274,8 +346,8 @@ export default function App() {
             <div className={`text-center py-16 rounded-2xl border ${
               isDarkMode ? 'bg-[#161616] border-gray-800 text-gray-400' : 'bg-white border-gray-200 text-gray-600'
             }`}>
-              <p className="text-sm font-semibold">No videos found matching your query.</p>
-              <p className="text-xs text-gray-500 mt-1">Try selecting another tab or resetting your search filter.</p>
+              <p className="text-sm font-semibold">No videos found in this feed.</p>
+              <p className="text-xs text-gray-500 mt-1">Select another section from the sidebar or clear search filters.</p>
             </div>
           )}
         </main>
