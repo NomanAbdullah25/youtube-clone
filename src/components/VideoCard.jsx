@@ -1,38 +1,69 @@
 import React from 'react';
-import { Play } from 'lucide-react';
 
-export default function VideoCard({ video, onSelectVideo }) {
+export default function VideoCard({ video, onSelectVideo, isDarkMode, isTrending }) {
   return (
     <div 
-      onClick={() => onSelectVideo(video)} 
-      className="flex flex-col gap-3 cursor-pointer group p-2 rounded-2xl transition-all duration-300 hover:bg-gray-800/40 hover:shadow-xl border border-transparent hover:border-gray-800/80"
+      onClick={() => onSelectVideo(video)}
+      className={`group cursor-pointer rounded-2xl overflow-hidden relative transition-all duration-300 hover:scale-[1.02] ${
+        isTrending 
+          ? `bg-gradient-to-r ${video.auraEffect || 'from-purple-600/30 via-red-600/20 to-indigo-600/30'} p-1 shadow-xl` 
+          : ''
+      }`}
     >
-      <div className="relative aspect-video rounded-xl overflow-hidden bg-gray-800/80 shadow-md">
-        <img 
-          src={video.thumbnail} 
-          alt={video.title} 
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ease-out"
-        />
-        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-          <div className="w-10 h-10 rounded-full bg-red-600/90 text-white flex items-center justify-center shadow-lg shadow-red-600/40 transform scale-95 group-hover:scale-100 transition-transform">
-            <Play size={18} fill="currentColor" className="ml-0.5" />
-          </div>
-        </div>
-        <span className="absolute bottom-2.5 right-2.5 bg-black/80 backdrop-blur-sm text-[10px] font-bold text-white px-2 py-0.5 rounded-md tracking-wider">
-          {video.duration}
-        </span>
-      </div>
+      <div className={`rounded-xl overflow-hidden ${
+        isDarkMode ? 'bg-[#181818]' : 'bg-white border border-gray-200'
+      }`}>
+        {/* Thumbnail Container */}
+        <div className="relative aspect-video w-full overflow-hidden bg-gray-900">
+          <img 
+            src={video.thumbnail} 
+            alt={video.title} 
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+          
+          {/* Duration Badge */}
+          <span className="absolute bottom-2 right-2 bg-black/80 text-white text-[10px] font-bold px-1.5 py-0.5 rounded backdrop-blur-sm">
+            {video.duration}
+          </span>
 
-      <div className="flex gap-3 px-0.5">
-        <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-500 flex-shrink-0 flex items-center justify-center font-bold text-xs text-white shadow-md">
-          {video.channel[0]}
+          {/* Anime Superpower Trending Rank Badge */}
+          {video.rank && (
+            <div className="absolute top-2 left-2 bg-gradient-to-r from-red-600 to-amber-500 text-white text-xs font-black px-2.5 py-1 rounded-lg shadow-lg flex items-center gap-1 border border-amber-300/40 animate-pulse">
+              <span>#{video.rank}</span>
+              <span className="text-[10px] tracking-wider uppercase">Trending</span>
+            </div>
+          )}
         </div>
-        <div className="flex flex-col">
-          <h3 className="font-semibold text-xs text-gray-100 line-clamp-2 leading-relaxed group-hover:text-red-400 transition-colors">
-            {video.title}
-          </h3>
-          <p className="text-[11px] text-gray-400 font-medium mt-1">{video.channel}</p>
-          <p className="text-[10px] text-gray-500 font-medium mt-0.5">{video.views} • {video.uploaded}</p>
+
+        {/* Video Information */}
+        <div className="p-3 flex gap-3">
+          {/* Avatar */}
+          <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-red-600 to-amber-500 text-white font-bold text-xs flex items-center justify-center shrink-0 shadow">
+            {video.avatar}
+          </div>
+
+          {/* Details */}
+          <div className="flex-1 min-w-0">
+            <h3 className={`text-sm font-semibold line-clamp-2 leading-snug transition-colors ${
+              isDarkMode ? 'text-white group-hover:text-red-400' : 'text-gray-900 group-hover:text-red-600'
+            }`}>
+              {video.title}
+            </h3>
+
+            <p className={`text-xs mt-1 transition-colors ${
+              isDarkMode ? 'text-gray-400' : 'text-gray-600'
+            }`}>
+              {video.channel}
+            </p>
+
+            <div className={`text-[11px] flex items-center gap-1 mt-0.5 transition-colors ${
+              isDarkMode ? 'text-gray-500' : 'text-gray-500'
+            }`}>
+              <span>{video.views}</span>
+              <span>•</span>
+              <span>{video.timestamp}</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
