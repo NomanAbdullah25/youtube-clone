@@ -1,10 +1,10 @@
 import React from 'react';
-import { X, ThumbsUp, Share2, Bookmark, Check } from 'lucide-react';
+import { X, ThumbsUp, ThumbsDown, Share2, Bookmark, Check } from 'lucide-react';
 
-export default function VideoModal({ video, onClose, isDarkMode }) {
+export default function VideoModal({ video, onClose, isDarkMode, likedVideos = [], onToggleLike }) {
   if (!video) return null;
 
-  // Embedded YouTube Video URL
+  const isLiked = likedVideos.some((v) => v.id === video.id);
   const embedUrl = `https://www.youtube.com/embed/${video.youtubeId || 'dQw4w9WgXcQ'}?autoplay=1`;
 
   return (
@@ -12,7 +12,6 @@ export default function VideoModal({ video, onClose, isDarkMode }) {
       <div className={`w-full max-w-4xl rounded-2xl border overflow-hidden shadow-2xl relative max-h-[90vh] flex flex-col ${
         isDarkMode ? 'bg-[#181818] border-gray-800 text-white' : 'bg-white border-gray-200 text-gray-900'
       }`}>
-        {/* Close Button */}
         <button 
           onClick={onClose}
           className="absolute top-3 right-3 z-10 bg-black/60 hover:bg-black/80 text-white p-2 rounded-full transition-colors"
@@ -20,7 +19,7 @@ export default function VideoModal({ video, onClose, isDarkMode }) {
           <X className="w-5 h-5" />
         </button>
 
-        {/* Embedded Video Player */}
+        {/* Embedded Player */}
         <div className="relative aspect-video w-full bg-black">
           <iframe
             src={embedUrl}
@@ -31,12 +30,11 @@ export default function VideoModal({ video, onClose, isDarkMode }) {
           ></iframe>
         </div>
 
-        {/* Video Information & Meta Controls */}
+        {/* Meta & Actions */}
         <div className="p-4 sm:p-6 overflow-y-auto">
           <h2 className="text-lg sm:text-xl font-bold leading-snug">{video.title}</h2>
           
           <div className="flex flex-wrap items-center justify-between gap-4 mt-3 pb-4 border-b border-gray-800">
-            {/* Channel Profile */}
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-red-600 to-amber-500 text-white font-bold text-sm flex items-center justify-center shadow">
                 {video.avatar}
@@ -53,36 +51,43 @@ export default function VideoModal({ video, onClose, isDarkMode }) {
               </button>
             </div>
 
-            {/* Action Buttons */}
+            {/* Like, Dislike & Action Buttons */}
             <div className="flex items-center gap-2 text-xs">
-              <button className={`flex items-center gap-1.5 px-3 py-2 rounded-full font-medium ${
+              {/* Like Button (Toggles Liked State & Adds to Liked Tab) */}
+              <button 
+                onClick={() => onToggleLike(video)}
+                className={`flex items-center gap-1.5 px-3.5 py-2 rounded-full font-medium transition-colors ${
+                  isLiked 
+                    ? 'bg-red-600 text-white' 
+                    : isDarkMode ? 'bg-[#272727] hover:bg-[#3f3f3f]' : 'bg-gray-100 hover:bg-gray-200'
+                }`}
+              >
+                <ThumbsUp className="w-4 h-4" />
+                <span>{isLiked ? 'Liked' : 'Like'}</span>
+              </button>
+
+              {/* Dislike Button */}
+              <button className={`flex items-center gap-1.5 px-3 py-2 rounded-full font-medium transition-colors ${
                 isDarkMode ? 'bg-[#272727] hover:bg-[#3f3f3f]' : 'bg-gray-100 hover:bg-gray-200'
               }`}>
-                <ThumbsUp className="w-4 h-4" />
-                <span>Like</span>
+                <ThumbsDown className="w-4 h-4" />
               </button>
-              <button className={`flex items-center gap-1.5 px-3 py-2 rounded-full font-medium ${
+
+              <button className={`flex items-center gap-1.5 px-3 py-2 rounded-full font-medium transition-colors ${
                 isDarkMode ? 'bg-[#272727] hover:bg-[#3f3f3f]' : 'bg-gray-100 hover:bg-gray-200'
               }`}>
                 <Share2 className="w-4 h-4" />
                 <span>Share</span>
               </button>
-              <button className={`flex items-center gap-1.5 px-3 py-2 rounded-full font-medium ${
-                isDarkMode ? 'bg-[#272727] hover:bg-[#3f3f3f]' : 'bg-gray-100 hover:bg-gray-200'
-              }`}>
-                <Bookmark className="w-4 h-4" />
-                <span>Save</span>
-              </button>
             </div>
           </div>
 
-          {/* Description Box */}
           <div className={`mt-4 p-3 rounded-xl text-xs space-y-1 ${
             isDarkMode ? 'bg-[#212121] text-gray-300' : 'bg-gray-100 text-gray-700'
           }`}>
             <p className="font-semibold">{video.views} • {video.timestamp}</p>
             <p className="leading-relaxed">
-              Official video stream for {video.title}. Enjoy high-definition playback and interactive video tools built into this full-stack React application.
+              Watching: {video.title}. Enjoy real-time interaction, automatic history saving, and local state persistence!
             </p>
           </div>
         </div>
