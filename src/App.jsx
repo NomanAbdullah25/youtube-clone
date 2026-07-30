@@ -4,298 +4,150 @@ import Sidebar from './components/Sidebar';
 import VideoCard from './components/VideoCard';
 import VideoModal from './components/VideoModal';
 import ProfileModal from './components/ProfileModal';
-import { Settings, Flag, HelpCircle, Sparkles } from 'lucide-react';
 
-const INITIAL_VIDEOS = [
+const initialVideos = [
   {
     id: '1',
-    youtubeId: 'dQw4w9WgXcQ',
     title: 'Full Stack Development Roadmap 2026',
     channel: 'Tech Lead',
-    category: 'Coding',
-    tabs: ['Home', 'History'],
-    isLiked: false,
     views: '120K views',
-    uploaded: '2 days ago',
+    timestamp: '2 days ago',
     duration: '14:20',
-    thumbnail: 'https://picsum.photos/seed/tech/600/340'
+    category: 'Coding',
+    thumbnail: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80',
+    avatar: 'T'
   },
   {
     id: '2',
-    youtubeId: 'LDB4uaJ87e0',
-    title: 'Building a Microservices Architecture with Node.js & React',
+    title: 'Building a Microservices Architecture with Node.js',
     channel: 'Code Mastery',
-    category: 'React',
-    tabs: ['Home', 'Liked Videos'],
-    isLiked: true,
     views: '45K views',
-    uploaded: '1 week ago',
+    timestamp: '1 week ago',
     duration: '22:15',
-    thumbnail: 'https://picsum.photos/seed/code/600/340'
+    category: 'Coding',
+    thumbnail: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80',
+    avatar: 'C'
   },
   {
     id: '3',
-    youtubeId: 'sBws8MSXN7A',
     title: 'Tailwind CSS Complete Masterclass (v4 & Beyond)',
     channel: 'Design Pro',
-    category: 'Design',
-    tabs: ['Home', 'Subscriptions'],
-    isLiked: true,
     views: '300K views',
-    uploaded: '1 month ago',
+    timestamp: '1 month ago',
     duration: '45:10',
-    thumbnail: 'https://picsum.photos/seed/design/600/340'
+    category: 'Design',
+    thumbnail: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&q=80',
+    avatar: 'D'
   },
   {
     id: '4',
-    youtubeId: 'W6NZfCO5SIk',
     title: 'MongoDB Aggregation Framework Tutorial',
     channel: 'Database Hub',
-    category: 'Coding',
-    tabs: ['Home', 'History'],
-    isLiked: false,
     views: '18K views',
-    uploaded: '3 days ago',
+    timestamp: '3 days ago',
     duration: '18:40',
-    thumbnail: 'https://picsum.photos/seed/data/600/340'
+    category: 'React',
+    thumbnail: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&q=80',
+    avatar: 'D'
   },
   {
     id: '5',
-    youtubeId: 'kJQP7kiw5Fk',
     title: 'Lo-Fi Chill Beats for Coding & Studying',
     channel: 'Lofi Girl',
-    category: 'Music',
-    tabs: ['Explore', 'Trending', 'Home'],
-    isLiked: true,
     views: '1.2M views',
-    uploaded: '3 weeks ago',
+    timestamp: '3 weeks ago',
     duration: '24:00',
-    thumbnail: 'https://picsum.photos/seed/lofi/600/340'
-  },
-  {
-    id: '6',
-    youtubeId: '2Vv-BfVoq4g',
-    title: 'Unreal Engine 5.4 Cinematic Rendering Breakdown',
-    channel: '3D World',
-    category: 'Design',
-    tabs: ['Explore', 'Trending'],
-    isLiked: false,
-    views: '890K views',
-    uploaded: '4 days ago',
-    duration: '19:05',
-    thumbnail: 'https://picsum.photos/seed/unreal/600/340'
-  },
-  {
-    id: '7',
-    youtubeId: '3JZ_D3ELwOQ',
-    title: 'AI Revolution in 2026: Autonomous Agents Explained',
-    channel: 'Future Tech',
-    category: 'Coding',
-    tabs: ['Explore', 'Trending'],
-    isLiked: true,
-    views: '650K views',
-    uploaded: 'Yesterday',
-    duration: '16:45',
-    thumbnail: 'https://picsum.photos/seed/aitech/600/340'
-  },
-  {
-    id: '8',
-    youtubeId: 'JfVOs4VSpmA',
-    title: 'Cyberpunk 2099 - Official Premiere Short Film',
-    channel: 'Cinematic Studio',
-    category: 'Design',
-    tabs: ['Movies & Shows'],
-    isLiked: true,
-    views: '2.4M views',
-    uploaded: '2 months ago',
-    duration: '32:10',
-    thumbnail: 'https://picsum.photos/seed/movie1/600/340'
+    category: 'Music',
+    thumbnail: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=800&q=80',
+    avatar: 'L'
   }
 ];
 
-const CATEGORIES = ['All', 'Coding', 'React', 'Design', 'Music'];
-
 export default function App() {
-  // Load initial states from localStorage if available
-  const [videos, setVideos] = useState(() => {
-    const saved = localStorage.getItem('yt_videos');
-    return saved ? JSON.parse(saved) : INITIAL_VIDEOS;
-  });
-
-  const [userProfile, setUserProfile] = useState(() => {
-    const saved = localStorage.getItem('yt_user_profile');
-    return saved ? JSON.parse(saved) : { name: 'Noman Abdullah', handle: '@nomanabdullah' };
-  });
-
-  const [activeTab, setActiveTab] = useState('Home');
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [searchQuery, setSearchQuery] = useState('');
   const [activeVideo, setActiveVideo] = useState(null);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
 
-  // Sync state changes to localStorage
-  useEffect(() => {
-    localStorage.setItem('yt_videos', JSON.stringify(videos));
-  }, [videos]);
+  // 1. Theme State (Defaults to dark mode true, persisted in localStorage)
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const saved = localStorage.getItem('yt_dark_mode');
+    return saved !== null ? JSON.parse(saved) : true;
+  });
 
-  useEffect(() => {
-    localStorage.setItem('yt_user_profile', JSON.stringify(userProfile));
-  }, [userProfile]);
-
-  const handleAddVideo = (newVid) => {
-    setVideos([newVid, ...videos]);
+  const toggleDarkMode = () => {
+    setIsDarkMode((prev) => {
+      const nextState = !prev;
+      localStorage.setItem('yt_dark_mode', JSON.stringify(nextState));
+      return nextState;
+    });
   };
 
-  const filteredVideos = videos.filter(video => {
+  // Filtered videos based on category and search query
+  const filteredVideos = initialVideos.filter((video) => {
     const matchesCategory = selectedCategory === 'All' || video.category === selectedCategory;
     const matchesSearch = video.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                           video.channel.toLowerCase().includes(searchQuery.toLowerCase());
-
-    if (!matchesCategory || !matchesSearch) return false;
-
-    if (activeTab === 'Home') return video.tabs.includes('Home');
-    if (activeTab === 'Explore') return video.tabs.includes('Explore') || video.tabs.includes('Trending');
-    if (activeTab === 'Trending') return video.tabs.includes('Trending');
-    if (activeTab === 'Movies & Shows') return video.tabs.includes('Movies & Shows');
-    if (activeTab === 'Subscriptions') return video.tabs.includes('Subscriptions');
-    if (activeTab === 'Liked Videos') return video.isLiked;
-    if (activeTab === 'History') return video.tabs.includes('History');
-
-    return true;
+    return matchesCategory && matchesSearch;
   });
 
-  const renderSystemContent = () => {
-    if (activeTab === 'Settings') {
-      return (
-        <div className="max-w-3xl bg-[#16161e] border border-gray-800/80 rounded-2xl p-6 shadow-xl space-y-6">
-          <div className="flex items-center gap-3 border-b border-gray-800 pb-4">
-            <Settings className="text-red-500" size={24} />
-            <h2 className="text-lg font-bold text-white">Account & System Settings</h2>
-          </div>
-          <div className="space-y-4 text-xs text-gray-300">
-            <div className="flex justify-between items-center p-3 bg-gray-900/50 rounded-xl border border-gray-800">
-              <div>
-                <p className="font-semibold text-white">Dark Cinema Theme</p>
-                <p className="text-gray-400 text-[11px]">Enabled high contrast dark mode</p>
-              </div>
-              <input type="checkbox" defaultChecked className="accent-red-600 w-4 h-4 cursor-pointer" />
-            </div>
-            <div className="flex justify-between items-center p-3 bg-gray-900/50 rounded-xl border border-gray-800">
-              <div>
-                <p className="font-semibold text-white">Autoplay Next Video</p>
-                <p className="text-gray-400 text-[11px]">Automatically play recommended videos</p>
-              </div>
-              <input type="checkbox" defaultChecked className="accent-red-600 w-4 h-4 cursor-pointer" />
-            </div>
-          </div>
-        </div>
-      );
-    }
-
-    if (activeTab === 'Report history') {
-      return (
-        <div className="max-w-3xl bg-[#16161e] border border-gray-800/80 rounded-2xl p-6 shadow-xl space-y-4">
-          <div className="flex items-center gap-3 border-b border-gray-800 pb-4">
-            <Flag className="text-red-500" size={24} />
-            <h2 className="text-lg font-bold text-white">Report History</h2>
-          </div>
-          <p className="text-xs text-gray-400">You have no active flags or content reports filed in the last 90 days.</p>
-        </div>
-      );
-    }
-
-    if (activeTab === 'Help') {
-      return (
-        <div className="max-w-3xl bg-[#16161e] border border-gray-800/80 rounded-2xl p-6 shadow-xl space-y-4">
-          <div className="flex items-center gap-3 border-b border-gray-800 pb-4">
-            <HelpCircle className="text-red-500" size={24} />
-            <h2 className="text-lg font-bold text-white">Help Center & Support</h2>
-          </div>
-          <div className="space-y-2 text-xs">
-            <p className="font-medium text-gray-200">Common Questions:</p>
-            <ul className="list-disc pl-5 text-gray-400 space-y-1">
-              <li>How do I edit my YouTube profile? (Click your profile avatar on the top right)</li>
-              <li>How do I upload a draft video? (Click the camera icon on the top right)</li>
-              <li>How do I play embedded content? (Click on any video card)</li>
-            </ul>
-          </div>
-        </div>
-      );
-    }
-
-    return null;
-  };
-
-  const isSystemMenu = ['Settings', 'Report history', 'Help'].includes(activeTab);
-
   return (
-    <div className="min-h-screen bg-[#0f0f13] text-gray-100 selection:bg-red-600 selection:text-white">
+    <div className={`min-h-screen transition-colors duration-200 ${isDarkMode ? 'bg-[#0f0f0f] text-white' : 'bg-gray-50 text-gray-900'}`}>
       <Navbar 
+        onOpenProfile={() => setIsProfileOpen(true)} 
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
-        userProfile={userProfile}
-        onOpenProfile={() => setIsProfileOpen(true)}
-        toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
-        onAddVideo={handleAddVideo}
+        isDarkMode={isDarkMode}
       />
 
-      <Sidebar 
-        activeTab={activeTab} 
-        setActiveTab={setActiveTab} 
-        isOpen={isSidebarOpen} 
-      />
+      <div className="flex pt-14">
+        <Sidebar 
+          selectedCategory={selectedCategory} 
+          setSelectedCategory={setSelectedCategory}
+          isDarkMode={isDarkMode}
+          toggleDarkMode={toggleDarkMode}
+        />
 
-      <main className={`pt-20 pr-6 pb-12 transition-all duration-300 ${isSidebarOpen ? 'md:pl-72 pl-6' : 'pl-6'}`}>
-        {!isSystemMenu && (
-          <div className="flex gap-2.5 overflow-x-auto pb-4 mb-5 no-scrollbar">
-            {CATEGORIES.map(cat => (
+        <main className="flex-1 p-6 ml-64 overflow-y-auto">
+          {/* Category Filter Pills */}
+          <div className="flex gap-3 mb-6 overflow-x-auto pb-2 scrollbar-none">
+            {['All', 'Coding', 'React', 'Design', 'Music'].map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all duration-200 ${
-                  selectedCategory === cat 
-                    ? 'bg-white text-gray-900 shadow-md font-bold scale-105' 
-                    : 'bg-gray-800/60 text-gray-300 hover:bg-gray-700/80 hover:text-white border border-gray-800'
+                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors whitespace-nowrap ${
+                  selectedCategory === cat
+                    ? isDarkMode ? 'bg-white text-black' : 'bg-black text-white'
+                    : isDarkMode ? 'bg-[#272727] text-white hover:bg-[#3f3f3f]' : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
                 }`}
               >
                 {cat}
               </button>
             ))}
           </div>
-        )}
 
-        <div className="flex items-center justify-between mb-6">
-          <h1 className="text-xl font-extrabold tracking-tight text-white flex items-center gap-2">
-            <span>{activeTab}</span>
-            <Sparkles size={16} className="text-red-500" />
-          </h1>
-          <span className="text-xs text-gray-400">Account: <strong className="text-purple-400">{userProfile.name}</strong></span>
-        </div>
+          {/* Video Grid */}
+          {filteredVideos.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+              {filteredVideos.map((v) => (
+                <VideoCard key={v.id} video={v} onSelectVideo={setActiveVideo} isDarkMode={isDarkMode} />
+              ))}
+            </div>
+          ) : (
+            <div className={`text-center py-16 rounded-2xl border ${isDarkMode ? 'bg-[#161616] border-gray-800 text-gray-400' : 'bg-white border-gray-200 text-gray-600'}`}>
+              <p className="text-sm font-semibold">No videos found matching your query.</p>
+              <p className="text-xs text-gray-500 mt-1">Try selecting another tab or resetting your search filter.</p>
+            </div>
+          )}
+        </main>
+      </div>
 
-        {isSystemMenu ? (
-          renderSystemContent()
-        ) : filteredVideos.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {filteredVideos.map(v => (
-              <VideoCard key={v.id} video={v} onSelectVideo={setActiveVideo} />
-            ))}
-          </div>
-        ) : (
-          <div className="text-gray-400 text-center py-16 bg-[#16161e] rounded-2xl border border-gray-800/80 shadow-lg">
-            <p className="text-sm font-semibold text-gray-300">No videos found in <strong className="text-red-400">{activeTab}</strong></p>
-            <p className="text-xs text-gray-500 mt-1">Try selecting another tab or resetting your search filter.</p>
-          </div>
-        )}
-      </main>
+      <VideoModal video={activeVideo} onClose={() => setActiveVideo(null)} isDarkMode={isDarkMode} />
 
-      <VideoModal video={activeVideo} onClose={() => setActiveVideo(null)} />
-
-      <ProfileModal 
-        isOpen={isProfileOpen} 
+      <ProfileModal
+        isOpen={isProfileOpen}
         onClose={() => setIsProfileOpen(false)}
-        userProfile={userProfile}
-        setUserProfile={setUserProfile}
+        isDarkMode={isDarkMode}
       />
     </div>
   );
