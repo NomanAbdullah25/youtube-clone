@@ -6,7 +6,7 @@ import VideoModal from './components/VideoModal';
 import ProfileModal from './components/ProfileModal';
 
 const videoDatabase = [
-  // --- HOME SECTION ---
+  // ================= HOME SECTION (12 Videos) =================
   {
     id: 'hm-1',
     youtubeId: 'dQw4w9WgXcQ',
@@ -59,8 +59,112 @@ const videoDatabase = [
     thumbnail: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?w=800&q=80',
     avatar: 'L'
   },
+  {
+    id: 'hm-5',
+    youtubeId: 'w7ejDZ8SWv8',
+    title: 'React 19 Hooks & State Management Deep Dive',
+    channel: 'React Core Team',
+    views: '510K views',
+    timestamp: '5 days ago',
+    duration: '29:40',
+    category: 'React',
+    section: 'home',
+    thumbnail: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80',
+    avatar: 'R'
+  },
+  {
+    id: 'hm-6',
+    youtubeId: '2g811Ko7K8U',
+    title: 'UI/UX Micro-Interactions in Figma & Framer',
+    channel: 'UX Motion Studio',
+    views: '230K views',
+    timestamp: '4 days ago',
+    duration: '18:50',
+    category: 'Design',
+    section: 'home',
+    thumbnail: 'https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80',
+    avatar: 'U'
+  },
+  {
+    id: 'hm-7',
+    youtubeId: 'Ke90Tje7VS0',
+    title: 'TypeScript Performance Optimization Patterns',
+    channel: 'ByteByteGo',
+    views: '175K views',
+    timestamp: '6 days ago',
+    duration: '19:10',
+    category: 'Coding',
+    section: 'home',
+    thumbnail: 'https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?w=800&q=80',
+    avatar: 'B'
+  },
+  {
+    id: 'hm-8',
+    youtubeId: '4xDzrJKXOOY',
+    title: 'Synthwave Coding Session – Night City Ambient',
+    channel: 'Cyber Sounds',
+    views: '890K views',
+    timestamp: '2 weeks ago',
+    duration: '1:15:00',
+    category: 'Music',
+    section: 'home',
+    thumbnail: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=800&q=80',
+    avatar: 'C'
+  },
+  {
+    id: 'hm-9',
+    youtubeId: 'SqcY0GlETPk',
+    title: 'Building Realtime Apps with Next.js & WebSockets',
+    channel: 'Dev Overdrive',
+    views: '340K views',
+    timestamp: '1 week ago',
+    duration: '31:25',
+    category: 'React',
+    section: 'home',
+    thumbnail: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80',
+    avatar: 'D'
+  },
+  {
+    id: 'hm-10',
+    youtubeId: '8aGhZQkoFbQ',
+    title: 'Design Systems for Scalable Web Applications',
+    channel: 'Figma Lab',
+    views: '98K views',
+    timestamp: '3 days ago',
+    duration: '21:05',
+    category: 'Design',
+    section: 'home',
+    thumbnail: 'https://images.unsplash.com/photo-1542744094-3a3121699563?w=800&q=80',
+    avatar: 'F'
+  },
+  {
+    id: 'hm-11',
+    youtubeId: 'N3AkSS5hXMA',
+    title: 'Rust for JavaScript Developers – Fast Intro',
+    channel: 'Fireship',
+    views: '1.1M views',
+    timestamp: '4 weeks ago',
+    duration: '11:45',
+    category: 'Coding',
+    section: 'home',
+    thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+    avatar: 'F'
+  },
+  {
+    id: 'hm-12',
+    youtubeId: 'TNhaISOUy6Q',
+    title: 'Acoustic Guitar Melodies for Deep Concentration',
+    channel: 'Acoustic Vibes',
+    views: '420K views',
+    timestamp: '5 days ago',
+    duration: '48:10',
+    category: 'Music',
+    section: 'home',
+    thumbnail: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80',
+    avatar: 'A'
+  },
 
-  // --- TRENDING SECTION (With Rank Badges & Aura) ---
+  // ================= TRENDING SECTION (6 Ranked Superpower Videos) =================
   {
     id: 'tr-1',
     youtubeId: 'M576WGiDBdQ',
@@ -106,8 +210,53 @@ const videoDatabase = [
     thumbnail: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80',
     avatar: 'N'
   },
+  {
+    id: 'tr-4',
+    youtubeId: 'kUMe1FH4CHE',
+    rank: 4,
+    title: 'Bankai Engine: 60FPS WebGL Shaders & Canvas FX',
+    channel: 'Graphics Overlord',
+    views: '1.9M views',
+    timestamp: '3 days ago',
+    duration: '20:15',
+    category: 'Design',
+    section: 'trending',
+    auraEffect: 'from-fuchsia-600/30 via-pink-500/20 to-rose-600/30 animate-pulse',
+    thumbnail: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80',
+    avatar: 'G'
+  },
+  {
+    id: 'tr-5',
+    youtubeId: '30LWjhZzg50',
+    rank: 5,
+    title: 'Ultra Instinct AI Agent Orchestration Framework',
+    channel: 'AI Autonomous',
+    views: '1.4M views',
+    timestamp: '4 days ago',
+    duration: '35:40',
+    category: 'Coding',
+    section: 'trending',
+    auraEffect: 'from-blue-600/30 via-sky-400/20 to-teal-500/30 animate-pulse',
+    thumbnail: 'https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&q=80',
+    avatar: 'I'
+  },
+  {
+    id: 'tr-6',
+    youtubeId: 'N3AkSS5hXMA',
+    rank: 6,
+    title: 'Chakra Control: High-Frequency State Management',
+    channel: 'Ninja Coders',
+    views: '980K views',
+    timestamp: '5 days ago',
+    duration: '15:20',
+    category: 'React',
+    section: 'trending',
+    auraEffect: 'from-orange-500/30 via-amber-400/20 to-red-600/30 animate-pulse',
+    thumbnail: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80',
+    avatar: 'N'
+  },
 
-  // --- EXPLORE SECTION ---
+  // ================= EXPLORE SECTION (8 Videos) =================
   {
     id: 'ex-1',
     youtubeId: '2g811Ko7K8U',
@@ -147,8 +296,73 @@ const videoDatabase = [
     thumbnail: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80',
     avatar: 'D'
   },
+  {
+    id: 'ex-4',
+    youtubeId: 'fN25f8iU8S4',
+    title: 'Futuristic Architectural Design in 3D Blender',
+    channel: 'Render Studio',
+    views: '310K views',
+    timestamp: '3 days ago',
+    duration: '27:40',
+    category: 'Design',
+    section: 'explore',
+    thumbnail: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
+    avatar: 'R'
+  },
+  {
+    id: 'ex-5',
+    youtubeId: 'jfKfPfyJRdk',
+    title: 'Deep House Beats for Late Night Coding Sessions',
+    channel: 'Electronic Hub',
+    views: '740K views',
+    timestamp: '2 weeks ago',
+    duration: '1:05:30',
+    category: 'Music',
+    section: 'explore',
+    thumbnail: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&q=80',
+    avatar: 'E'
+  },
+  {
+    id: 'ex-6',
+    youtubeId: 'dQw4w9WgXcQ',
+    title: 'Mastering Docker & Kubernetes for Cloud Deployments',
+    channel: 'Cloud Native Lab',
+    views: '520K views',
+    timestamp: '1 week ago',
+    duration: '42:15',
+    category: 'Coding',
+    section: 'explore',
+    thumbnail: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&q=80',
+    avatar: 'C'
+  },
+  {
+    id: 'ex-7',
+    youtubeId: 'L_LUpnjgPso',
+    title: 'Building Interactive 3D Web Experiences with Three.js',
+    channel: 'Creative Tech',
+    views: '280K views',
+    timestamp: '4 days ago',
+    duration: '23:50',
+    category: 'React',
+    section: 'explore',
+    thumbnail: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80',
+    avatar: 'C'
+  },
+  {
+    id: 'ex-8',
+    youtubeId: 'SqcY0GlETPk',
+    title: 'Minimalist Interior Design Aesthetics & Principles',
+    channel: 'Space Design',
+    views: '190K views',
+    timestamp: '6 days ago',
+    duration: '15:10',
+    category: 'Design',
+    section: 'explore',
+    thumbnail: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80',
+    avatar: 'S'
+  },
 
-  // --- SUBSCRIPTIONS SECTION ---
+  // ================= SUBSCRIPTIONS SECTION =================
   {
     id: 'sub-1',
     youtubeId: 'SqcY0GlETPk',
@@ -176,7 +390,7 @@ const videoDatabase = [
     avatar: 'D'
   },
 
-  // --- HISTORY SECTION ---
+  // ================= HISTORY SECTION =================
   {
     id: 'his-1',
     youtubeId: 'N3AkSS5hXMA',
@@ -204,7 +418,7 @@ const videoDatabase = [
     avatar: 'D'
   },
 
-  // --- LIKED VIDEOS SECTION ---
+  // ================= LIKED VIDEOS SECTION =================
   {
     id: 'lk-1',
     youtubeId: 'kUMe1FH4CHE',
@@ -254,14 +468,13 @@ export default function App() {
     });
   };
 
-  // Filter video list specifically per section
+  // Filter video list specifically per section & category
   const displayedVideos = videoDatabase.filter((video) => {
     const matchesSearch = video.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                           video.channel.toLowerCase().includes(searchQuery.toLowerCase());
     
     if (!matchesSearch) return false;
 
-    // Strict tab filtering so each section gets distinct videos
     if (video.section !== activeSection) return false;
 
     if (activeSection === 'home' || activeSection === 'explore') {
@@ -298,7 +511,7 @@ export default function App() {
           isSidebarOpen ? 'md:ml-64 ml-0' : 'ml-0'
         }`}>
           
-          {/* Main Panel Header (NO EMOJIS EXCEPT FIRE ON TRENDING) */}
+          {/* Main Panel Header */}
           <div className="flex items-center justify-between mb-6">
             <h1 className="text-xl md:text-2xl font-bold capitalize flex items-center gap-2">
               {activeSection === 'trending' && '🔥 Trending'}
@@ -346,8 +559,8 @@ export default function App() {
             <div className={`text-center py-16 rounded-2xl border ${
               isDarkMode ? 'bg-[#161616] border-gray-800 text-gray-400' : 'bg-white border-gray-200 text-gray-600'
             }`}>
-              <p className="text-sm font-semibold">No videos found in this feed.</p>
-              <p className="text-xs text-gray-500 mt-1">Select another section from the sidebar or clear search filters.</p>
+              <p className="text-sm font-semibold">No videos found in this category feed.</p>
+              <p className="text-xs text-gray-500 mt-1">Select another tab or reset your category filter.</p>
             </div>
           )}
         </main>
